@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+
+  <title>Frontend Mentor | Time tracking dashboard</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body onload="weeklyShow()">
+  <div class="container">
+  <div class="mainBox">
+    <div class="header">
+    <img class="profile" src="images/image-jeremy.png" alt="">
+    <p>Report for </p>
+    <h2>Jeremy Robson</h2>
+  </div>
+  <ul>
+  <li id="dailybtn" onclick="dailyShow()">Daily</li>
+  <li id="weeklybtn" onclick="weeklyShow()">Weekly</li>
+  <li id="monthlybtn" onclick="monthlyShow()">Monthly</li>
+</ul>
+</div>
+<div class="smallerBoxes">
+<div class="box work">
+  <img class="icon" src="images/icon-work.svg" alt="">
+  <div class="content">
+    <div class="headline">
+      <p class="type">Work</p>
+      <img class="dots" src="images/dots.svg" alt="">
+  </div>
+  <div class="daily" id="daily">
+    <p class="time">5hrs</p> <!-- daily -->
+    <p class="previous">Previous - 7hrs</p> <!-- daily -->
+</div>
+
+  <div class="weekly" id="weekly">
+    <p class="time"> 32hrs </p><!-- weekly -->
+    <p class="previous">Previous - 36hrs</p> <!-- weekly -->
+  </div>
+  <div class="monthly">
+    <p class="time">103hrs</p> <!-- monthly -->
+    <p class="previous">Previous - 128hrs</p> <!-- monthly -->
+</div>
+</div>
+</div>
+
+<div class="box play">
+  <img class="icon" src="images/icon-play.svg" alt="">
+  <div class="content">
+    <div class="headline">
+      <p class="type">Play</p>
+      <img class="dots" src="images/dots.svg" alt="">
+  </div>
+  <div class="daily">
+    <p class="time">1hr</p> <!-- daily -->
+    <p class="previous">Previous - 2hrs</p> <!-- daily -->
+</div>
+
+  <div class="weekly">
+    <p class="time"> 10hrs </p><!-- weekly -->
+    <p class="previous">Previous - 8hrs</p> <!-- weekly -->
+  </div>
+  <div class="monthly">
+    <p class="time">23hrs</p> <!-- monthly -->
+    <p class="previous">Previous - 29hrs</p> <!-- monthly -->
+</div>
+</div>
+</div>
+
+<div class="box study">
+  <img class="icon" src="images/icon-study.svg" alt="">
+  <div class="content">
+    <div class="headline">
+      <p class="type">Study</p>
+      <img class="dots" src="images/dots.svg" alt="">
+  </div>
+  <div class="daily">
+    <p class="time">0hrs</p> <!-- daily -->
+    <p class="previous">Previous - 1hr</p> <!-- daily -->
+</div>
+
+  <div class="weekly">
+    <p class="time"> 4hrs </p><!-- weekly -->
+    <p class="previous">Previous - 7hrs</p> <!-- weekly -->
+  </div>
+  <div class="monthly">
+    <p class="time">13hrs</p> <!-- monthly -->
+    <p class="previous">Previous - 19hrs</p> <!-- monthly -->
+</div>
+</div>
+</div>
+
+
+<div class="box exercise">
+  <img class="icon" src="images/icon-exercise.svg" alt="">
+  <div class="content">
+    <div class="headline">
+      <p class="type">Exercise</p>
+      <img class="dots" src="images/dots.svg" alt="">
+  </div>
+  <div class="daily">
+    <p class="time">1hr</p> <!-- daily -->
+    <p class="previous">Previous - 1hr</p> <!-- daily -->
+</div>
+
+  <div class="weekly">
+    <p class="time"> 4hrs </p><!-- weekly -->
+    <p class="previous">Previous - 5hrs</p> <!-- weekly -->
+  </div>
+  <div class="monthly">
+    <p class="time">11hrs</p> <!-- monthly -->
+    <p class="previous">Previous - 18hrs</p> <!-- monthly -->
+</div>
+</div>
+</div>
+  
+
+<div class="box social">
+  <img class="icon" src="images/icon-social.svg" alt="">
+  <div class="content">
+    <div class="headline">
+      <p class="type">Social</p>
+      <img class="dots" src="images/dots.svg" alt="">
+  </div>
+  <div class="daily">
+    <p class="time">1hr</p> <!-- daily -->
+    <p class="previous">Previous - 3hrs</p> <!-- daily -->
+</div>
+
+  <div class="weekly">
+    <p class="time"> 5hrs </p><!-- weekly -->
+    <p class="previous">Previous - 10hrs</p> <!-- weekly -->
+  </div>
+  <div class="monthly">
+    <p class="time">21hrs</p> <!-- monthly -->
+    <p class="previous">Previous - 23hrs</p> <!-- monthly -->
+</div>
+</div>
+</div>
+
+<div class="box selfcare">
+  <img class="icon" src="images/icon-self-care.svg" alt="">
+  <div class="content">
+    <div class="headline">
+      <p class="type">Self Care</p>
+      <img class="dots" src="images/dots.svg" alt="">
+  </div>
+  <div class="daily">
+    <p class="time">0hrs</p> <!-- daily -->
+    <p class="previous">Previous - 1hrs</p> <!-- daily -->
+</div>
+
+  <div class="weekly">
+    <p class="time"> 2hrs </p><!-- weekly -->
+    <p class="previous">Previous - 2hrs</p> <!-- weekly -->
+  </div>
+  <div class="monthly">
+    <p class="time">7hrs</p> <!-- monthly -->
+    <p class="previous">Previous - 11hrs</p> <!-- monthly -->
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+  <div class="attribution">
+    <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Jorune Bagaviciute</a>.</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
